@@ -1,0 +1,76 @@
+html.page {
+    background-color: grey;
+    }
+body.page {
+    background-image: url("images/rightPage.png");
+    background-repeat: no-repeat;
+    }
+body.frame{
+    font-size: 16px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+}
+h1 {
+    font-size: 24px;
+    color: black;
+    font-weight: bold;
+    margin-top: 1.0em;
+    margin-bottom: 0.5em;
+   }
+button.tab{
+    width: 60px;
+    background-color: Transparent;
+    background-image: url("images/topTabBack.png");
+    background-repeat:no-repeat;
+    float: left;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 16px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: darkgrey;
+}
+button.tab1{
+    width: 60px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 16px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+}
+
+button.tab2{
+    width: 60px;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    font-size: 10px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+}
+iframe{
+    border: none;
+}
+footer{
+    font-size: 12px;
+    font-family: "Comic Sans MS", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+}
