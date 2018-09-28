@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+    <body class="frame">
+        <p>1 February 2014<br />
+        Saturday</p>
+        <p>We had an early start, driving to Shoreham and then catching the 2A bus to Hove to go to the Bohen showroom. We caught the earlier bus and so were half an hour early for our 10am appointment. We then spent until 11:30 modifying the design. Lee will update things and invite us again. In the evening we had an e-mail from Tony Kennard giving an installation cost and details of the others who would contact us (plumber, electrician and plasterer). I mailed back with some questions about the floor, which did not seem to be covered.<br />
+        On our way back we called into Dad's to fill up his pill box.<br />
+        Most of what remained of the afternoon was spent doing the monthly accounts.</p>
+        <p>2 February 2014<br />
+        Sunday</p>
+        <p>A day not doing a great deal. We walked to Beeding newsagents this morning and spoke to the children this afternoon. Otherwise I failed to find the problem with my RC software.</p>
+        <p>3 February 2014<br />
+        Monday</p>
+        <p>Another day spent almost entirely working on my RC software. I discovered that the diagnostic prints were taking a lot of processing time. With a minimum of prints, the cycle time is down to about 10ms. However, I still have problems with the timeout and with the communications breaking down after about a hundred transfers. The timeout on the ground station fails if it is set lower than one second!</p>
+        <p>4 February 2014<br />
+        Tuesday</p>
+        <p>More work on the RC software during the morning. I was able to show that a simple, continual transmission from the ground station and it's receipt by the plane will work for long periods of time. Even then allowing the plane to transmit a reply, but without the ground station attempting to receive it, works. However, as soon as I enable reception in the ground station I get problems.<br />
+        After lunch we went in the garden and I gave the apple trees a 'haircut'. Then, in the evening, I went to an IET talk at the Hawth. It was on the construction of fuel pipelines just before and during WWII.</p>
+        <p>5 February 2014<br />
+        Wednesday</p>
+        <p>Again a lot of time was spent working on my RC software. At one point I thought that I had found the problem with occasional failures, but a state model that simply transmitted from the ground and replied from the plane (no waiting for the plane to transmit) still failed, eventually. However, adding error recovery to both ends of the original state model at least keeps communication going.</p>
+        <p>6 February 2014<br />
+        Thursday</p>
+        <p>As usual, the morning was spent doing the weekly shop. Dad still seemed to be having trouble with his boiler, but we were unable to work out exactly what had happened.<br />
+        This afternoon I spent some time reading and reviewing more Springboard grant applications.<br />
+        Then I worked further on my software. Both ground and plane recover from errors, but I could not find out why the ground timeout does not work as I expected.</p>
+        <p>7 February 2014<br />
+        Friday</p>
+        <p>I read some parts of the weekend's papers and reviewed a few more Springboard applications.<br />
+        A lot of the rest of the day was then spent revising my RC software. I implemented my revised model, but the ground station is not doing as planned. It will not get past the second transmit without giving a transmit error. There must be something not set up properly on the cyrf between transmits.<br />
+        In the evening it was the SRFC club meeting at the John Selden. They held a quiz on models and planes.</p>
+        <p>8 February 2014<br />
+        Saturday</p>
+        <p>At least it was dry when we walked to the newsagents in Beeding this morning. Later I read parts of the paper and did the weekly accounts.<br />
+        I also managed to work out what is required so as to make the cyrf RF module retransmit without having received a packet. I then started tidying up the code.</p>
+        <p>9 February 2014<br />
+        Sunday</p>
+        <p>Some of the day was spent tidying up the code for my RC modules. The rest of the day was spent reading the paper!<br />
+        I had a response from someone interested in my car. But it sounds suspicious!</p>
+        <p>10 February 2014<br />
+        Monday</p>
+        <p>We started the day by going to Howdens to look again at doors and leave a message for Claire about the changes we want. Then we went on to Dad's for coffee.<br />
+        After lunch I spent quite a long time checking the bank statement against my accounts and then drilled out a collet and repaired the nose wheel of my plane.<br />
+        We were expecting the plasterer to call at four o'clock, but he did not come.<br />
+        I also reviewed a few more Springboard Grant applications.</p>
+        <p>11 February 2014<br />
+        Tuesday</p>
+        <p>This morning I reviewed some more Springboard grant applications.<br />
+        This afternoon, while Angela went to a WI committee meeting, I continued tidying my code, tried some changes to the register settings for the cyrf and implemented a fail safe on the plane. However, there is something wrong with the logic for the latter!<br />
+        This evening we went to Glyndebourne for a talk and a back-stage tour. It was very good.</p>
+        <p>12 February 2014<br />
+        Wednesday</p>
+        <p>This morning we took a trip to Bohen's at Hove, by car to Shoreham and then bus to Hove. We resolved some design issues, left some unresolved and arranged for them to call with a fitter to get the other part of the quote.<br />
+        After lunch, Angela went to table tennis (in the gale) and I reviewed some more Springboard applications and worked on my software.</p>
+        <p>13 February 2014<br />
+        Thursday</p>
+        <p>Shopping day again. After a late lunch I spent most of the afternoon reviewing the remaining Springboard grant applications and completing the summary form.</p>
+        <p>14 February 2014<br />
+        Friday</p>
+        <p>Not a day to go out: Rain all morning and high winds in the evening. Les from Bohen brought a builder this morning to look at the kitchen. Then Angela went down to Steyning. Later in the afternoon she took Bay to the clinic at Lyons Farm. Meanwhile, I got my RC system working from stick to servo, even if it is only operating once per second. Now I just need to speed it up to 50 times per second!</p>
+        <p>15 February 2014<br />
+        Saturday</p>
+        <p>During our walk to the paper shop this morning, or more precisely, during my walk home, I managed to lose the front door key! Angela had gone off in the direction of Steyning and I went up through the field. When I took out a tissue so I must have also pulled out the key. Luckily I realised that was the most likely spot and so found the key.<br />
+        After that, I gradually increased the frequency of transmission on my RC modules, up to 50Hz. Unfortunately, this resulted in a lot of jitter on he he servos. I will need to try making the plane poll for a received packet, rather than using the interrupt.<br />
+        After lunch we drove over to Victoria's. This time there was little traffic and it only took us one hour 45 minutes. We spent the rest of the afternoon and the early evening playing with Austin.</p>
+        <p>16 February 2014<br />
+        Sunday</p>
+        <p>Pancakes for breakfast! Then I took down the loft hatch and painted it, before removing the watering system from the greenhouse, tidying up the area under the car port and taking rubbish to the tip. In between we played with Austin. We left after dinner and arrived home just before ten.</p>
+        <p>17 February 2014<br />
+        Monday</p>
+        <p>During the morning I discovered that the servo jitter seemed to be due to the reading of the sticks in the ground station!<br />
+        After lunch I went over to Dad's. Whilst there the fencing contractor came and replaced four panels. I then called into the yard to pay the bill.</p>
+        <p>18 February 2014<br />
+        Tuesday</p>
+        <p>Firstly I went to the Springboard grants meeting at Brighton. Steve Maycock gave me a copy of an advertisement for more governors!<br />
+        After lunch I confirmed that the servo jitter was due to the stick inputs and found that by powering the Arduino with the same power source as the sticks removed the servo jitter. Although using the voltage from the voltage regulator did not solve the problem.<br />
+        This evening I went to Falmer to an IET meeting on malware.</p>
+        <p>19 February 2014<br />
+        Wednesday</p>
+        <p>During the morning, after sitting down and reading parts of last Saturday's paper, I sorted out the power for the sticks so that we do not get jitter on the servos and swapped the units so as to show that the TX failures are not due to the hardware.<br />
+        This afternoon I took Dad to the nurse so that he could have his yearly check-up.</p>
+        <p>20 February 2014<br />
+        Thursday</p>
+        <p>I made Dad's shopping list yesterday and so we were able to get an early start to the weekly shop. This meant that we were home for a latish lunch and had more time to do other things.<br />
+        I e-mailed the contact at Brighton about the advert for more members of the Board of Governors, asking for more details of their responsibilities. I also e-mailed Sussex STEM about a request for short talks at Steyning.<br />
+        Time could also be spent on my RC software. I discovered why the transmit error recovery code was behaving as it was, but have not yet understood why transmit errors are happening in the first place. However, I might need to replace the use of interrupts with a more deterministic flow method.</p>
+        <p>21 February 2014<br />
+        Friday</p>
+        <p>A sad day! Someone has bought the MG! He had arranged to call on Saturday morning, but phoned this afternoon to see if he could call today. He had looked at several MGF's, but after a looking over the car and driving around Steyning, he said that he liked it and we settled on &#163;1,100. So he left a deposit and said that he would return with the rest of the cash in the morning.<br />
+        Otherwise, I started work on an alternative state model for my RC software.<br />
+        We also had a visit from the Bohen installer, with his electrician. We now need to visit a flooring shop to select a suitable covering.</p>
+        <p>22 February 2014<br />
+        Saturday</p>
+        <p>It was really sad to see the MG being driven off this morning. However, we then went into Worthing to pay the cash into the bank. I also called into the model shop. It seems that my kit will still be another couple of weeks. We then went to Findon garden centre to get a few things on the way home.<br />
+        After lunch I did the weekly accounts and again tried to trace the cause of the transmit errors, but without success.<br />
+        This evening we took Bay to a jazz concert given by the tutors of a jazz workshop. It was not our type of jazz!</p>
+        <p>23 February 2014<br />
+        Sunday</p>
+        <p>Following our usual Sunday morning walk to the Beeding newsagents, I did a little flying practice on the simulator and then continued work on my CV. I mailed Steve Maycock to tell him that I would be applying and then completed the basic CV and drafted the covering letter.<br />
+        We also spent some time talking to Victoria and Paul.</p>
+        <p>24 February 2014<br />
+        Monday</p>
+        <p>This morning we went to a flooring shop in Portslade to look at kitchen flooring. We brought home a few samples to compare against the units and worktop when we next go to the Bohen showroom. On the way back we called into Dad's before going home for lunch. After lunch I e-mailed the fitter with our choice so that he can complete a quotation. I then completed my application for a Brighton Board of Governor position and sent it off.<br />
+        Later in the afternoon I started writing down the sequence of the code for the ground station in an attempt to understand why it produces transmit errors.</p>
+        <p>25 February 2014<br />
+        Tuesday</p>
+        <p>Last night I found a thread on rcgroups about Dunk's DIY RC project. He was having rejected packets. However, it turned out to be the PACTL pins on the Unigen module that he is using. Someone else is also using the Unigen module. There are a few things for me to look at, but currently I don't see any reason for my transmit timeouts. I modified the error analysis, but the code is doing things that I don't understand.<br />
+        Otherwise I had a quiet day since Angela took the bus into Worthing and so was out for much of the morning.</p>
+        <p>26 February 2014<br />
+        Wednesday</p>
+        <p>It was a fine day today and so I put my transmitter and receiver batteries on charge with the.intention of going up to the flying field this afternoon. However, I decided that it was too cold and too windy. So I walked up there, and it was!<br />
+        Otherwise I spent most of the day trying to resolve my transmit timeout problem. I compared some very elegant, but cryptic code from an old rcgroups forum, but found no clues. I also implemented some diagnostics that I worked out on my walk.<br />
+        I e-mailed the Howden fitter about the flooring.</p>
+        <p>27 February 2014<br />
+        Thursday</p>
+        <p>That day of the week again when we shop for three households. We were not too late for lunch.<br />
+        The rest of the day was again spent trying to solve the problem with my RC software. Although, while Angela went around to Bay's I practiced both the piano and flying. I discovered that the repeated transmit errors are the result of a receive timeout, but I can't see why, or how to remedy it.</p>
+        <p>28 February 2014<br />
+        Friday</p>
+        <p>A small amount of progress on the RC software front. Doing a dummy read after a receive timeout allowed the transmits to continue. But there are still a lot of single receive timeouts and quite often a whole string of them (quite regularly 13 or 16), sometimes resulting in the plane going to fail safe. Sometimes there are the maximum timeouts (currently set to 20 for testing) and so re-initialising the cyrf.<br />
+        Started designing a simplified version of the ground station without using interrupts. Also found another rcgroups thread with someone trying to emulate a Spectrum transmitter with a cyrf6936.</p>
+    </body>
+</html>

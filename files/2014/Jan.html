@@ -1,1 +1,143 @@
-
+<html>
+    <head>
+        <link rel="stylesheet" href="../../style.css">
+    </head>
+    <body class="frame">
+        <p>1 January 2014<br />
+        Wednesday</p>
+        <p>New Year's Day, but a very wet and windy one. So we stayed at indoors. I completed my second RC unit, but trying to put the RF module into receive mode resulted in bits being set that indicate that it has received a packet! But with errors.<br />
+        Otherwise, we both nursed our colds.</p>
+        <p>2 January 2014<br />
+        Thursday</p>
+        <p>The day revolved around going to the Theatre Royal in Brighton. I collected Dad in the morning and brought him back for lunch. Then we picked up Bay and drove to Brighton. It was a bit of a performance; dropping them outside the theatre, parking the car and walking back to the theatre; going to collect the car; driving back to the theatre to pick them up. The traffic going into Brighton was slow, but the traffic coming out was horrendous. The show itself was loud, brash, but entertaining. Bay and Dad enjoyed it.<br />
+        While we were in Brighton, Paul and Krista arrived back from Holland. So we all had dinner together before I drove Bay and Dad home. It was 10:15 before I finally sat down! Paul and Krista then showed us the houses they had looked at in the Netherlands. They want to start looking at houses in the UK also.</p>
+        <p>3 January 2014<br />
+        Friday</p>
+        <p>Paul &amp; Krista left fairly early this morning, so we then tidied up before lunch. Afterwards we went to Findon and Angela bought some boots. We then went to Howdens in Broadwater. They use the old Eurotherm offices!<br />
+        The remainder of the day was spent reading the brochures and doing the jigsaw!</p>
+        <p>4 January 2014<br />
+        Saturday</p>
+        <p>Cold heavy.<br />
+        However, a significant day on the RC module front. I transmitted 16 bytes form one module and received them at the other, even if the first byte was corrupted (consistently). I also transmitted dTa the other way (with the same corruption of the first byte).<br />
+        Otherwise, we went to Dad's and changed his bed, got him to do his washing, and filled his pill box. I could not persuade him to have a shower while we were there!</p>
+        <p>5 January 2014<br />
+        Sunday</p>
+        <p>Cold still heavy, but no worse, although my cough stopped me getting to sleep until quite late.<br />
+        At least I had some exercise by walking to the newsagents in Beeding this morning. Then I sat and read the paper before practicing on the RC flight simulator (I couldn't land the low-wing trainer without crashing), followed by editing the Christmas photos.<br />
+        After lunch we went to the Bohen kitchen showroom and printed a few photos at Tesco on the way home.<br />
+        After dinner we completed the jigsaw.</p>
+        <p>6 January 2014<br />
+        Monday</p>
+        <p>We had our first visit from a kitchen designer, in this case, from Wickes. Otherwise, I took out the Christmas tree out and we then cleaned the house. I also spent a little time tidying the code of my test sketch.</p>
+        <p>7 January 2014<br />
+        Tuesday</p>
+        <p>I spent quite a lot of time working on my RC design. I did some more to tidy the code and modified the hardware design so as to introduce the received data interrupt. But the software is still work in progress. Although I did walk to Beeding to get my hair cut.<br />
+        In the evening I drove to Crawley for an IET talk on '50 years of control engineering'.</p>
+        <p>8 January 2014<br />
+        Wednesday</p>
+        <p>Most of the day was spent trying to get the interrupt working. The RF module seems to behave correctly, but the the ISR seems to run when it is defined! I tested an external interrupt using the Uno, just to check the method.</p>
+        <p>9 January 2014<br />
+        Thursday</p>
+        <p>Shopping day! At least we stopped for coffee at M&amp;S.</p>
+        <p>10 January 2014<br />
+        Friday</p>
+        <p>Success! After creating a cut down version of my code, just doing receive, I got the interrupt on packet reception to work. So now I have prototyped all the major parts of RC system.<br />
+        We also had a visit from the Bohen's kitchen designer.</p>
+        <p>11 January 2014<br />
+        Saturday</p>
+        <p>After a walk to the newsagents in Beeding we went to Dad's, primarily to clear a way to the broken fence panels. So we changed his bed and then went into the garden. We dismantled his cold frame and cut back some bushes. We found that three panels were broken!<br />
+        After a late lunch I did the accounts and started putting together a spreadsheet to price the kitchen.<br />
+        I also cooked dinner!</p>
+        <p>12 January 2014<br />
+        Sunday</p>
+        <p>The usual walk to the newsagents. Firstly I completed the kitchen cost estimates, revealing a huge sum! Then reading of papers, practicing flying and piano, and working on my RC testbed. I found that case 0 locks the serial port! Also, adding an automatic print of the received data caused the interrupt routine to run following on startup!<br />
+        We then spoke to Victoria/Austin and Paul/Rowan.</p>
+        <p>13 January 2014<br />
+        Monday</p>
+        <p>Again most of the day was spent experimenting with my RC testbed. I modified the channel and SOP PN code and changed the power level. However, I am getting some spurious interrupts, inspire of shielding the IRQ line and using the voltage regulator instead of the USB for power.</p>
+        <p>14 January 2014<br />
+        Tuesday</p>
+        <p>Another day spent mainly working on my RC system. I included code to check errors on received data and added an LED to each unit that can be driven to indicate successful communication. But I have been unable to find the cause of the spurious interrupts.<br />
+        I also backed up recent photos (those from August) from the Mac to the laptop.</p>
+        <p>15 January 2014<br />
+        Wednesday</p>
+        <p>More time spent this morning on the RC design. But still spurious interrupts! I tied inverting the IRQ signal so that the interrupt is triggered on the falling edge. But it had no effect.<br />
+        This afternoon I took Bay to the surgery, where she had part of her nose and cheek removed. Angela went to her walking club lunch, then went to table tennis and then came on to Bay's for a cup of tea.<br />
+        I also spent some time working out why Southern Water were asking for a large increase in our direct debit payments.</p>
+        <p>16 January 2014<br />
+        Thursday</p>
+        <p>Shopping was delayed today due to the third kitchen 'designer' visit, this time from Howdens. We lowered the specification slightly, to a laminate work top and putting a free-standing microwave in a cupboard. This brings my estimate down to &#163;17,000!<br />
+        After lunch we went to Dad's, Tesco and M&amp;S at Holmebush, Dad's and Bay's. A tiring day.</p>
+        <p>17 January 2014<br />
+        Friday</p>
+        <p>Another morning getting nowhere with the spurious interrupt problem. Another, possibly related, problem emerged when I found that, mostly, the spurious packets have a packet error, occasionally they have no error bits set at all. When this happens, the system appears to lock, although I can't see the mechanism that would cause this. I did reduce the interrupt routine to just setting a flag and I mapped out the outline design for both the ground station and the plane units.<br />
+        I also checked over the car and washed it! Well, rinsed it really. However, I pulled a muscle in my back while doing so! Perhaps I should stop washing cars after mishaps on the last two occasions.</p>
+        <p>18 January 2014<br />
+        Saturday</p>
+        <p>A painful day! The pulled muscle in my back is a pain, literally. Sitting down is difficult and getting into the car a real problem. Once sat it is ok and getting up is manageable.<br />
+        I did the weekly accounts and then made a small start on the ground station code. My aim is to start by transferring values back and forth every second and allow a value to be entered.<br />
+        After lunch we went over to Dad's. He had changed and had a shower! Angela tidied one of his kitchen cupboards and he did another. Then we watched some of his cine films. The whole process is too complicated for him.</p>
+        <p>19 January 2014<br />
+        Sunday</p>
+        <p>Another day spent struggling with the strained back. I started taking ibuprofen and using a cold compress, which seemed to be making an improvement. Then I had a couple of spasms just before dinner and it seemed to put me back to the start.<br />
+        During the early afternoon, John and Val's house alarm went off. So I hobbled over (in my slippers) and turned it off.</p>
+        <p>20 January 2014<br />
+        Monday</p>
+        <p>Another day nursing my back. I started by calling NHS 111, who suggested I visit my GP, who might be able to give me some stronger pain killers. So I made an appointment for tomorrow morning. Of course, the problem has reduced during the day!<br />
+        So Angela took Dad to the optician this morning. The optician will refer him to his GP to get something done about his cataracts.<br />
+        After lunch, Angela went to her first afternoon WI meeting. She then went back to try to give blood!<br />
+        I added a second LED to each of my R.C units and said a little more on the ground station and plane code.</p>
+        <p>21 January 2014<br />
+        Tuesday</p>
+        <p>By the time that I went to the doctor this morning, my back was considerably better! He gave me some exercises to help keep my muscles stretched.<br />
+        The rest of the day was then spent reading and re-designing my RC software. I also booked the MG in for its MOT and the panda to have its boot looked at.<br />
+        Whilst watching Winterwatch we had a short FaceTime call from Austin! He was sitting up in his parents bed, not wanting to clean his teeth or or go to his own bed.</p>
+        <p>22 January 2014<br />
+        Wednesday</p>
+        <p>Since we need to take Bay to have stitches out tomorrow, we brought shopping day forward. We needed to make an early start since Angela had table tennis during the afternoon. So I stayed with Dad while Angela went to Tesco and Marks.<br />
+        After lunch I did some practicing (flying and piano) and worked on my RC software, as well as do my exercises. I managed to get the basic framework in place for both the ground station and the plane and got them to perform their opening communication.</p>
+        <p>23 January 2014<br />
+        Thursday</p>
+        <p>I spent a while putting test print statements in my ground and plane code, but have not yet got them communicating after the first exchange.<br />
+        After an early lunch we took Bay to a surgery in Tarring to have her stitches removed. We then went on to Rogers Farm garden centre, so there was then little of the afternoon left, particularly after I did my exercises.<br />
+        We did, however, receive the Howden kitchen design and quote. It seems to be quite a bit less than my estimate.</p>
+        <p>24 January 2014<br />
+        Friday</p>
+        <p>The morning was spent doing the accounts, checking kitchen prices and working on my RC software. I can now get several transactions before the ground station locks!<br />
+        After lunch it took two and a quarter hours to get to Victoria's, mainly due to two sets of road works around Guildford. When we got there, Angela and Victoria went to collect Austin from nursery and then Angela and I went to the fish and chip shop and brought back supper. After a lot of chips, Austin played for a while, looked at pictures/movies of trains and tractors and then went for a bath before going to bed.</p>
+        <p>25 January 2014<br />
+        Saturday</p>
+        <p>We did not get up until 8:30 this morning and then had pancakes (thick ones with maple syrup) for breakfast.then we went to Wickes to get a new panel of corrugated plastic for their car port. The panel went in the car, but Victoria and Angela had to walk home!<br />
+        Victoria and Brandon went out for lunch while Austin slept and then had lunch with us. But he did not eat very much. They were back by about three o'clock, with cakes for desert.<br />
+        After coffee and our cakes, we all walked to the local park so that Austin could play on the slide. Whereas the morning had been sunny, it became windy and cloudy. Luckily we had just got back when it started raining hard.<br />
+        Austin is certainly saying a lot of words and is stringing two or three together.</p>
+        <p>26 January 2014<br />
+        Sunday</p>
+        <p>Another late morning, but this time a large bowl of porridge. Austin was still on good form and we left at 11:15 and travelled to Paul's.<br />
+        We had lunch, played with Rowan and talked all afternoon (it was windy and raining), before having dinner and leaving at seven. We were home at eight thirty.</p>
+        <p>27 January 2014<br />
+        Monday</p>
+        <p>This morning I took the MG for a short run down the bypass and checked washers and lights. Then, while Angela went to Steyning, I sorted out the photos and video clips that I took over the weekend. Then I found why my ground station was stopping after four sends. However, the ground station now sends about forty packets (and gets replies) before failing!<br />
+        After lunch we went to Howdens to look at doors, work tops, handles and appliances. We changed our mind on some things, but I am not sure about the cheapest range of doors. They are four pieces of chipboard, presumably doweled together to form the frame, with a thin chipboard infill. They seem insubstantial!<br />
+        We then went on to Dad's to change his bed, look at his post and have a cup of tea. Angela noticed that his boiler was leaking from inside the cabinet. Although he had mentioned a leak, he had not shown us this place, only the slight drip from the water inlet. So we made an appointment for BG to call tomorrow afternoon.</p>
+        <p>28 January 2014<br />
+        Tuesday</p>
+        <p>My MG now has a year's MOT! Luckily nothing needed doing. So I had two walks to/from Simms. However, the owner thought that I would have difficulty selling it, particularly for &#163;1,200.<br />
+        A lot of the rest of the day was spent working on my RC software. I discovered that the transmit/receive cycle takes about 160 milliseconds! Whereas I was expecting to be able to do it, perhaps with a repeat or two, within 20ms.<br />
+        This evening the kitchen fitter called. He will need to come back with a plumber and electrician!</p>
+        <p>29 January 2014<br />
+        Wednesday</p>
+        <p>This morning's meeting at Bohen was postponed until Saturday, due to the illness of Lee's wife.<br />
+        So I spent some time researching timers in the Arduino and adjusting the current code to use a 1Hz timer interrupt. I also modified the state diagrams to include timeouts.<br />
+        Then I went to Dad's to take him to Southlands for treatment of his scalp. After having cream applied, we went back to his house for lunch, before retuning for his 'red-light' treatment.</p>
+        <p>30 January 2014<br />
+        Thursday</p>
+        <p>Basically the whole day was spent shopping. We already had Dad's list so we were able to make a relatively early start. However, by the time we sorted out things for Dad, such as writing instructions on each of his ready meals and showing him again how to use his microwave, and then called into B&amp;Q to buy a door bell for Bay, it was quite late by the time we got home for lunch. Then it took a long time at Bay's, fitting the door bell, showing her our latest set of photos and replacing photos in her frames. So it was too late to try out the slow cooker that had brought from Victoria's and we simply cooked fish and chips!</p>
+        <p>31 January 2014<br />
+        Friday</p>
+        <p>Not a particularly productive day! It took me nearly an hour to review five grant applications!<br />
+        After lunch we walked down to Shooting Field to collect our Music Society membership card (and got quite wet in the process). Then I did the weekly accounts.<br />
+        Angela tried the slow cooker. But the stew was a bit thin and did not have much flavour.<br />
+        I started trying to implement some error recovery in my RC units.</p>
+    </body>
+</html>
