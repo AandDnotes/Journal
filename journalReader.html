@@ -37,12 +37,10 @@
             // Reset month and day
             monthFunc(0);
             dayFunc(0);
-            //document.getElementsByTagName("BUTTON")[lastyear].setAttribute("style", "color: darkgrey;");
             document.getElementsByTagName("BUTTON")[0].style.color = 'darkgrey';
             document.getElementsByTagName("BUTTON")[0].style.backgroundImage = 'url(images/toptabBack.png)';
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.color = 'darkgrey';
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = 'url(images/toptabBack.png)';
-            //document.getElementsByTagName("BUTTON")[year].setAttribute("style", "color: black;");
             document.getElementsByTagName("BUTTON")[1 + year].style.color = 'black';
             document.getElementsByTagName("BUTTON")[1 + year].style.backgroundImage = 'url(images/toptab.png)';
             // Reinstate month and day list
@@ -96,11 +94,6 @@
             }
             document.getElementById("url").innerHTML = source;
             document.getElementById("frame").src = source;
-            //document.getElementById("frame").setAttribute("src", source);
-            //the following two lines attempt to refresh the src parameter
-            //var iframe = document.getElementById('frame');
-            //iframe.src = iframe.src;
-            //document.getElementById("test2").innerHTML = iframe.src;
         }
     </script>
     <body onload="home()" class="page" style="width: 685px; height: 830px;"> 
@@ -119,7 +112,7 @@
         </header>
         <main style="position: absolute; top: 60px; left: 100px; width: 520px;">
             
-            <!-- <p> iframe.src: <span id="test2"></span></p> -->
+            <!-- iframe.src is set in functions home and setSrc -->
             <iframe id="frame" style="width: 480px; height: 680px;"></iframe>
         </main>
         <aside id="months" style="position: absolute; top: 80px; left: 610px; width: 40px;">
