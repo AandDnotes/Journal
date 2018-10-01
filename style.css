@@ -1,5 +1,7 @@
 html.page {
     background-color: grey;
+    background-image: url("images/background_wood.png");
+    background-repeat: no-repeat;
     }
 body.page {
     background-image: url("images/rightPage.png");
