@@ -20,6 +20,8 @@
         
         function home() {
             // Set source
+            //source = "http://AandDnotes.github.io/Journal/files/home.html";
+            // It seems that the iframe src needs to be a relative reference rather than an absolute url
             source = "files/home.html";
             document.getElementById("url").innerHTML = source;
             document.getElementById("frame").src = source;
@@ -83,11 +85,11 @@
         }
         function setSrc() {
             if (year < 5) {
-                // Set source to a month file
+                // Set source to a month file (relative)
                 source = "files/" + years[year] +"/" + months[month];
                 // Hide list of days
                 document.getElementById("days").style.visibility="hidden";
-                // Otherwise set source to a day file
+                // Otherwise set source to a day file (relative)
             } else {
                 source = "files/" + years[year] +"/" + months[month] + "/" + days[day];
                 document.getElementById("days").style.visibility="visible";
