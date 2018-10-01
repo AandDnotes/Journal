@@ -84,12 +84,12 @@
         function setSrc() {
             if (year < 5) {
                 // Set source to a month file
-                source = "http://AandDnotes.github.io/Journal/files/" + years[year] +"/" + months[month];
+                source = "files/" + years[year] +"/" + months[month];
                 // Hide list of days
                 document.getElementById("days").style.visibility="hidden";
                 // Otherwise set source to a day file
             } else {
-                source = "http://AandDnotes.github.io/Journal/files/" + years[year] +"/" + months[month] + "/" + days[day];
+                source = "files/" + years[year] +"/" + months[month] + "/" + days[day];
                 document.getElementById("days").style.visibility="visible";
             }
             document.getElementById("url").innerHTML = source;
