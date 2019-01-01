@@ -6,15 +6,15 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <script>
-        var year = 5;
+        var year = 6;
         var month = 0;
         var day = 0;
-        var numyears = 6;
-        var years = ["2013", "2014", "2015", "2016", "2017", "2018", "", "", "", ""];
+        var numyears = 7;
+        var years = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "", "", ""];
         var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
         var days = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
         var source;
-        var lastyear = 5;
+        var lastyear = 6;
         var lastmonth = 0;
         var lastday = 0;
         
@@ -96,6 +96,8 @@
             }
             document.getElementById("url").innerHTML = source;
             document.getElementById("frame").src = source;
+            // setTimeout(function(){ document.getElementById("frame").src = source; }, 500);
+            // document.getElementById('frame').contentDocument.location.reload(true);
         }
     </script>
     <body onload="home()" class="page" style="width: 685px; height: 830px;"> 
@@ -107,8 +109,8 @@
             <button type="button" onclick="yearFunc(3)" class="tab">2016</button>
             <button type="button" onclick="yearFunc(4)" class="tab">2017</button>
             <button type="button" onclick="yearFunc(5)" class="tab">2018</button>
-            <!-- <button type="button" onclick="yearFunc(6)" class="tab"></button>
-            <button type="button" onclick="yearFunc(7)" class="tab"></button>
+            <button type="button" onclick="yearFunc(6)" class="tab">2019</button>
+            <!-- <button type="button" onclick="yearFunc(7)" class="tab"></button>
             <button type="button" onclick="yearFunc(8)" class="tab"></button>
             <button type="button" onclick="yearFunc(9)" class="tab"></button> -->
         </header>
