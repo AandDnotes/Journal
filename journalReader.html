@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <title>Journal</title>
-        <meta name="description" content="journal v1.0 1st October 2018">
+        <meta name="description" content="journal v1.1 1st March 2020">
         <link rel="stylesheet" href="style.css">
     </head>
     <script>
@@ -57,18 +57,23 @@
             dayFunc(0);
             // Deal with different number of days in month
             if (month == 1) {
+              // Leap years 2020, 2024 & 2028
+              if (year == 7 || year == 11 || year == 15) {
+                document.getElementById("29").style.visibility="visible"
+              } else {
                 document.getElementById("29").style.visibility="hidden";
-                document.getElementById("30").style.visibility="hidden";
-                document.getElementById("31").style.visibility="hidden";
+              }
+              document.getElementById("30").style.visibility="hidden";
+              document.getElementById("31").style.visibility="hidden";
             } else {
-                document.getElementById("29").style.visibility="visible";
-                document.getElementById("30").style.visibility="visible";
-                document.getElementById("31").style.visibility="visible";
-                if (month == 3 || month == 5 || month == 8 ||month == 10) {
-                    document.getElementById("31").style.visibility="hidden";
-                } else {
-                document.getElementById("31").style.visibility="visible";
-                }
+              document.getElementById("29").style.visibility="visible";
+              document.getElementById("30").style.visibility="visible";
+              document.getElementById("31").style.visibility="visible";
+              if (month == 3 || month == 5 || month == 8 ||month == 10) {
+                document.getElementById("31").style.visibility="hidden";
+              } else {
+              document.getElementById("31").style.visibility="visible";
+              }
             }
             document.getElementsByTagName("BUTTON")[1 + numyears + lastmonth].setAttribute("style", "color: black;");
             document.getElementsByTagName("BUTTON")[1 + numyears + month].setAttribute("style", "color: maroon;");
