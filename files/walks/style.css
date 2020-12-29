@@ -20,7 +20,7 @@ h2 {
     font-size: 150%;
     color: maroon;
     font-weight: bold;
-    margin-top: 1.1em;
+    margin-top: 1.0em;
     margin-bottom: 0.7em;
    }
 div.spiral {
@@ -31,9 +31,10 @@ div.page {
     position: relative;
     background-color: ivory;
     margin-left: 70px;
-    padding: 1px 50px 50px 50px;
+    padding: 1px 50px 47px 50px;
     width: 900px;
-    box-shadow: 10px 10px 5px grey;
+    clear: both;
+    /*box-shadow: 10px 10px 5px grey;*/
   }
 img {
     box-shadow: 10px 10px 5px #888888;
