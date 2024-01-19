@@ -22,6 +22,7 @@
         function home() {
             // Set source
             //source = "http://AandDnotes.github.io/Journal/files/home.html";
+            //source = 'url(http://AandDnotes.github.io/Journal/files/home.html)';
             // It seems that the iframe src needs to be a relative reference rather than an absolute url
             source = "files/home.html";
             document.getElementById("url").innerHTML = source;
@@ -29,8 +30,10 @@
             // Change tab styles
             document.getElementsByTagName("BUTTON")[0].style.color = 'black';
             document.getElementsByTagName("BUTTON")[0].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTab.png)';
+            //document.getElementsByTagName("BUTTON")[0].style.backgroundImage = "images/topTab.png"
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.color = 'darkgrey';
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            //document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = "images/topTabBack.png"
             // Hide month and day lists; reinstate in yearFunc
             document.getElementById("months").style.visibility="hidden";
             document.getElementById("days").style.visibility="hidden";
@@ -42,10 +45,13 @@
             dayFunc(0);
             document.getElementsByTagName("BUTTON")[0].style.color = 'darkgrey';
             document.getElementsByTagName("BUTTON")[0].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            //document.getElementsByTagName("BUTTON")[0].style.backgroundImage = "images/topTabBack.png"
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.color = 'darkgrey';
             document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            //document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = "images/topTabBack.png"
             document.getElementsByTagName("BUTTON")[1 + year].style.color = 'black';
             document.getElementsByTagName("BUTTON")[1 + year].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTab.png)';
+            //document.getElementsByTagName("BUTTON")[1 + year].style.backgroundImage = "images/topTab.png"
             // Reinstate month and day list
             document.getElementById("months").style.visibility="visible";
             document.getElementById("days").style.visibility="visible";
