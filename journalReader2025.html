@@ -1,0 +1,185 @@
+<html class="page">
+    <head>
+        <meta charset="utf-8">
+        <title>Journal</title>
+        <meta name="description" content="journal v1.4 19th January 2024">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="quill.png">
+    </head>
+    <script>
+        var year = 12; <!-- the number of entries in the variable 'years' minus 1 -->
+        var month = 0;
+        var day = 0;
+        var numyears = 13; <!-- the number of entries in the variable 'years' -->
+        var years = ["2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"];
+        var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+        var days = ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"];
+        var source;
+        var lastyear = 12; <!-- the number of entries in the variable 'years' minus 1 -->
+        var lastmonth = 0;
+        var lastday = 0;
+
+        function home() {
+            // Set source
+            //source = "http://AandDnotes.github.io/Journal/files/home.html";
+            // It seems that the iframe src needs to be a relative reference rather than an absolute url
+            source = "files/home.html";
+            document.getElementById("url").innerHTML = source;
+            document.getElementById("frame").src = source;
+            // Change tab styles
+            document.getElementsByTagName("BUTTON")[0].style.color = 'black';
+            document.getElementsByTagName("BUTTON")[0].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTab.png)';
+            document.getElementsByTagName("BUTTON")[1 + lastyear].style.color = 'darkgrey';
+            document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            // Hide month and day lists; reinstate in yearFunc
+            document.getElementById("months").style.visibility="hidden";
+            document.getElementById("days").style.visibility="hidden";
+        }
+        function yearFunc(y) {
+            year = y;
+            // Reset month and day
+            monthFunc(0);
+            dayFunc(0);
+            document.getElementsByTagName("BUTTON")[0].style.color = 'darkgrey';
+            document.getElementsByTagName("BUTTON")[0].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            document.getElementsByTagName("BUTTON")[1 + lastyear].style.color = 'darkgrey';
+            document.getElementsByTagName("BUTTON")[1 + lastyear].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTabBack.png)';
+            document.getElementsByTagName("BUTTON")[1 + year].style.color = 'black';
+            document.getElementsByTagName("BUTTON")[1 + year].style.backgroundImage = 'url(http://AandDnotes.github.io/Journal/images/topTab.png)';
+            // Reinstate month and day list
+            document.getElementById("months").style.visibility="visible";
+            document.getElementById("days").style.visibility="visible";
+            lastyear = year;
+            setSrc();
+        }
+        function monthFunc(m) {
+            month = m;
+            // Reset day
+            dayFunc(0);
+            // Deal with different number of days in month
+            if (month == 1) {
+              // Leap years 2020, 2024 & 2028
+              if (year == 7 || year == 11 || year == 15) {
+                document.getElementById("29").style.visibility="visible"
+              } else {
+                document.getElementById("29").style.visibility="hidden";
+              }
+              document.getElementById("30").style.visibility="hidden";
+              document.getElementById("31").style.visibility="hidden";
+            } else {
+              document.getElementById("29").style.visibility="visible";
+              document.getElementById("30").style.visibility="visible";
+              document.getElementById("31").style.visibility="visible";
+              if (month == 3 || month == 5 || month == 8 ||month == 10) {
+                document.getElementById("31").style.visibility="hidden";
+              } else {
+              document.getElementById("31").style.visibility="visible";
+              }
+            }
+            document.getElementsByTagName("BUTTON")[1 + numyears + lastmonth].setAttribute("style", "color: black;");
+            document.getElementsByTagName("BUTTON")[1 + numyears + month].setAttribute("style", "color: maroon;");
+            lastmonth = month;
+            setSrc();
+        }
+
+        function dayFunc(d) {
+            day = d;
+            document.getElementsByTagName("BUTTON")[1 + numyears + 12 + lastday].setAttribute("style", "color: black;");
+            document.getElementsByTagName("BUTTON")[1 + numyears + 12 + day].setAttribute("style", "color: maroon;");
+            lastday = day;
+            setSrc();
+        }
+        function setSrc() {
+            if (year < 5) {
+                // Set source to a month file (relative)
+                source = "files/" + years[year] +"/" + months[month];
+                // Hide list of days
+                document.getElementById("days").style.visibility="hidden";
+                // Otherwise set source to a day file (relative)
+            } else {
+                source = "files/" + years[year] +"/" + months[month] + "/" + days[day];
+                document.getElementById("days").style.visibility="visible";
+            }
+            document.getElementById("url").innerHTML = source;
+            document.getElementById("frame").src = source;
+            // setTimeout(function(){ document.getElementById("frame").src = source; }, 500);
+            // document.getElementById('frame').contentDocument.location.reload(true);
+        }
+    </script>
+    <body onload="home()" class="page" style="width: 685px; height: 830px;">
+        <header style="position: absolute; top: 25px; left: 130px;">
+            <button type="button" onclick="home()" class="tab">Home</button>
+            <button type="button" onclick="yearFunc(0)" class="tab">2013</button>
+            <button type="button" onclick="yearFunc(1)" class="tab">2014</button>
+            <button type="button" onclick="yearFunc(2)" class="tab">2015</button>
+            <button type="button" onclick="yearFunc(3)" class="tab">2016</button>
+            <button type="button" onclick="yearFunc(4)" class="tab">2017</button>
+            <button type="button" onclick="yearFunc(5)" class="tab">2018</button>
+            <button type="button" onclick="yearFunc(6)" class="tab">2019</button>
+            <button type="button" onclick="yearFunc(7)" class="tab">2020</button>
+            <button type="button" onclick="yearFunc(8)" class="tab">2021</button>
+            <p></p>
+            <button type="button" onclick="yearFunc(9)" class="tab">2022</button>
+            <button type="button" onclick="yearFunc(10)" class="tab">2023</button>
+            <button type="button" onclick="yearFunc(11)" class="tab">2024</button>
+            <button type="button" onclick="yearFunc(12)" class="tab">2025</button>
+            <!-- <button type="button" onclick="yearFunc(7)" class="tab"></button>
+            <button type="button" onclick="yearFunc(9)" class="tab"></button> -->
+        </header>
+        <main style="position: absolute; top: 80px; left: 100px; width: 520px;">
+
+            <!-- iframe.src is set in functions home and setSrc -->
+            <iframe id="frame" style="width: 480px; height: 680px;"></iframe>
+        </main>
+        <aside id="months" style="position: absolute; top: 80px; left: 610px; width: 40px;">
+            <button type="button" onclick="monthFunc(0)" class="tab1">Jan</button>
+            <button type="button" onclick="monthFunc(1)" class="tab1">Feb</button>
+            <button type="button" onclick="monthFunc(2)" class="tab1">Mar</button>
+            <button type="button" onclick="monthFunc(3)" class="tab1">Apr</button>
+            <button type="button" onclick="monthFunc(4)" class="tab1">May</button>
+            <button type="button" onclick="monthFunc(5)" class="tab1">Jun</button>
+            <button type="button" onclick="monthFunc(6)" class="tab1">Jul</button>
+            <button type="button" onclick="monthFunc(7)" class="tab1">Aug</button>
+            <button type="button" onclick="monthFunc(8)" class="tab1">Sep</button>
+            <button type="button" onclick="monthFunc(9)" class="tab1">Oct</button>
+            <button type="button" onclick="monthFunc(10)" class="tab1">Nov</button>
+            <button type="button" onclick="monthFunc(11)" class="tab1">Dec</button>
+        </aside>
+        <aside id="days" style="position: absolute; top: 80px; left: 570px; width: 30px;">
+            <button type="button" onclick="dayFunc(0)" class="tab2">01</button>
+            <button type="button" onclick="dayFunc(1)" class="tab2">02</button>
+            <button type="button" onclick="dayFunc(2)" class="tab2">03</button>
+            <button type="button" onclick="dayFunc(3)" class="tab2">04</button>
+            <button type="button" onclick="dayFunc(4)" class="tab2">05</button>
+            <button type="button" onclick="dayFunc(5)" class="tab2">06</button>
+            <button type="button" onclick="dayFunc(6)" class="tab2">07</button>
+            <button type="button" onclick="dayFunc(7)" class="tab2">08</button>
+            <button type="button" onclick="dayFunc(8)" class="tab2">09</button>
+            <button type="button" onclick="dayFunc(9)" class="tab2">10</button>
+            <button type="button" onclick="dayFunc(10)" class="tab2">11</button>
+            <button type="button" onclick="dayFunc(11)" class="tab2">12</button>
+            <button type="button" onclick="dayFunc(12)" class="tab2">13</button>
+            <button type="button" onclick="dayFunc(13)" class="tab2">14</button>
+            <button type="button" onclick="dayFunc(14)" class="tab2">15</button>
+            <button type="button" onclick="dayFunc(15)" class="tab2">16</button>
+            <button type="button" onclick="dayFunc(16)" class="tab2">17</button>
+            <button type="button" onclick="dayFunc(17)" class="tab2">18</button>
+            <button type="button" onclick="dayFunc(18)" class="tab2">19</button>
+            <button type="button" onclick="dayFunc(19)" class="tab2">20</button>
+            <button type="button" onclick="dayFunc(20)" class="tab2">21</button>
+            <button type="button" onclick="dayFunc(21)" class="tab2">22</button>
+            <button type="button" onclick="dayFunc(22)" class="tab2">23</button>
+            <button type="button" onclick="dayFunc(23)" class="tab2">24</button>
+            <button type="button" onclick="dayFunc(24)" class="tab2">25</button>
+            <button type="button" onclick="dayFunc(25)" class="tab2">26</button>
+            <button type="button" onclick="dayFunc(26)" class="tab2">27</button>
+            <button type="button" onclick="dayFunc(27)" class="tab2">28</button>
+            <button id="29" type="button" onclick="dayFunc(28)" class="tab2">29</button>
+            <button id="30" type="button" onclick="dayFunc(29)" class="tab2">30</button>
+            <button id="31" type="button" onclick="dayFunc(30)" class="tab2">31</button>
+        </aside>
+        <footer style="position: absolute; top: 760px; left: 100px;">
+            <p><span id="url"></span></p>
+        </footer>
+    </body>
+</html>
